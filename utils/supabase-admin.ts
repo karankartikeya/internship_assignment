@@ -8,10 +8,11 @@ export const supabaseAdmin = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY || ''
 );
 
-const getUsers = async () => {
+const getUsers = async (email:string) => {
   const { data, error } = await supabaseAdmin
     .from('users')
     .select('*')
+    .eq('email', email)
   if (error || !data) {
     throw error || new Error('No user found');
   }

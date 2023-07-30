@@ -25,11 +25,17 @@ function Page({ }: Props) {
     //     }
     // }
 
-    console.log("userDetails", userDetails != null)
-    if (userDetails == null) {
-        router.push('/');
+    const pushBack = () => {
+        router.push('/login');
+        return true;
     }
-
+    const signout = async () => {
+        const { error } = await supabase.auth.signOut();
+        if (!error) {
+            console.log("Logout Successful");
+        }
+        location.reload();
+    }
     const [page, setPage] = useState<number>(1);
     const my_api_key = '45a0318f351a5d3ec4d5b622f267bf0a';
     const FeaturedApi = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${my_api_key}&page=${page}`;
@@ -37,7 +43,7 @@ function Page({ }: Props) {
     const getMovies = async () => {
         return await axios.get(FeaturedApi).then((res) => res.data.results);
     };
-    const { isLoading:loadingCheck, data } = useQuery<Movies[]>(
+    const { isLoading: loadingCheck, data } = useQuery<Movies[]>(
         ['movies', page],
         getMovies,
         {
@@ -51,19 +57,23 @@ function Page({ }: Props) {
 
     return (
         <div className="movie_app">
-            <h1 className="header">
-                Here are your movies Karan
-            </h1>
-
+            <div className='flex justify-between space-x-10'>
+                <h1 className="header">
+                    Here are your movies Karan
+                </h1>
+                <button className='w-14 text-sm md:text-lg md:w-24 h-12 p-2 bg-red-400 shadow-lg shadow-red-500/50 hover:shadow-red-300 text-white font-semibold rounded-lg my-auto' onClick={signout}>SignOut</button>
+            </div>
             <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {loadingCheck ? (
+                {isLoading ? (
                     <h1 className="loading">Loading...</h1>
-                ) : (
-                    <>
-                        {(data ?? []).length > 0 &&
-                            (data ?? []).map((movie) => <Movie key={movie.id} {...movie} />)}
-                    </>
-                )}
+                ) : userDetails != null ? (
+                    (
+                        <>
+                            {(data ?? []).length > 0 &&
+                                (data ?? []).map((movie) => <Movie key={movie.id} {...movie} />)}
+                        </>
+                    )
+                ) : (<div>{pushBack()}</div>)}
             </div>
 
             <div className="space-x-5">
