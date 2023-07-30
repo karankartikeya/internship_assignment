@@ -1,28 +1,36 @@
 'use client'
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
-import React, {  useState } from 'react'
+import React, { useState } from 'react'
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from '@tanstack/react-query'
 
 type Props = {}
 
 function Provider({
-    children,
-  }: {
-    children: React.ReactNode
-  }) {
+  children,
+}: {
+  children: React.ReactNode
+}) {
 
-    
+
   // Create a new supabase browser client on every first render.
   const [supabaseClient] = useState(() => createBrowserSupabaseClient());
-  
-    return (
+  const queryClient = new QueryClient();
 
-        <SessionContextProvider
-            supabaseClient={supabaseClient}
-        >
-            {children}
-        </SessionContextProvider>
-    )
+  return (
+
+    <QueryClientProvider client={queryClient}>
+      <SessionContextProvider
+        supabaseClient={supabaseClient}
+      >
+        {children}
+      </SessionContextProvider>
+    </QueryClientProvider>
+  )
 }
 
 export default Provider

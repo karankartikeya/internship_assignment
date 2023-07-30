@@ -9,12 +9,12 @@ function Hero({ }: Props) {
     return (
         <div className="items-center h-screen">
             <Img
-                className="absolute h-[492px] w-[82rem] inset-x-[0] mx-auto -z-10 top-[0] mt-[10px] md:mt-[90px]"
+                className="absolute h-[492px] w-[82rem] inset-x-[0] mx-auto -z-10 top-[0] mt-[10px] md:mt-24"
                 src="images/img_gradient.png"
                 alt="gradient"
             />
-            <div className='mt-[10px] md:mt-[100px] items-center justify-center text-center space-y-5  flex-col'>
-                <h1 className='text-emerald-500 text-lg font-medium text-center'>Jet Protocol</h1>
+            <div className='mt-[10px] md:mt-48 items-center justify-center text-center space-y-5  flex-col'>
+                <h1 className='text-emerald-500 text-[30px] font-medium text-center'>Jet Protocol</h1>
                 <h1 className='text-white text-4xl md:text-8xl font-medium leading-10 '>the next generation of</h1>
                 <h1 className='text-white text-4xl md:text-8xl font-medium  leading-10 italic'>defi governance</h1>
             </div>
