@@ -37,7 +37,7 @@ function Page({ }: Props) {
         location.reload();
     }
     const [page, setPage] = useState<number>(1);
-    const my_api_key = '45a0318f351a5d3ec4d5b622f267bf0a';
+    const my_api_key = process.env.NEXT_PUBLIC_TMDB;
     const FeaturedApi = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${my_api_key}&page=${page}`;
 
     const getMovies = async () => {
