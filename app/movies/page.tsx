@@ -58,10 +58,10 @@ function Page({ }: Props) {
     return (
         <div className="movie_app">
             <div className='flex justify-between space-x-10'>
-                <h1 className="header">
+                <h1 className="text-lg md:text-[48px] text-white text-center flex-col">
                     Here are your movies Karan
                 </h1>
-                <button className='w-14 text-sm md:text-lg md:w-24 h-12 p-2 bg-red-400 shadow-lg shadow-red-500/50 hover:shadow-red-300 text-white font-semibold rounded-lg my-auto' onClick={signout}>SignOut</button>
+                <button className='w-16 text-sm md:text-lg md:w-24 h-12 p-1 bg-red-400 shadow-lg shadow-red-500/50 hover:shadow-red-300 text-white font-semibold rounded-lg my-auto' onClick={signout}>SignOut</button>
             </div>
             <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {isLoading ? (

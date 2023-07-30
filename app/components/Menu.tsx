@@ -17,15 +17,15 @@ export default function Menu({ menu, session }: Props) {
     },
     {
       title: "Why Us?",
-      link: "/#whyUs"
+      link: "/"
     },
     {
       title: "How it Works?",
-      link: "/#howItWorks"
+      link: "/"
     },
     {
       title: "Courses",
-      link: "/#courses",
+      link: "/",
     },
   ];
 
@@ -38,7 +38,7 @@ export default function Menu({ menu, session }: Props) {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
-          className="sticky top-full mt-8 w-full shadow lg:hidden bg-yellow-300 z-30"
+          className="sticky top-full mt-8 w-full shadow lg:hidden bg-green-300 z-30"
         >
           <ul className="flex flex-col divide-y divide-gray-100 text-center ">
             {menus &&
@@ -64,7 +64,7 @@ export default function Menu({ menu, session }: Props) {
               <>
                 <li
                   className="active:text-blue-600 font-extrabold text-gray-600 font-bold py-4 transition hover:text-blue-500 "
-                  onClick={() => router.push("/signin")}
+                  onClick={() => router.push("/login")}
                 >
                   Login
                 </li>

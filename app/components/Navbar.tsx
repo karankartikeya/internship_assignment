@@ -25,21 +25,21 @@ function Navbar({ session }: Props) {
             },
             {
                 title: "dao",
-                link: "/#whyUs",
+                link: "/",
             },
             {
                 title: "build",
-                link: "/#howItWorks",
+                link: "/",
             },
             {
                 title: "docs",
-                link: "/#courses",
+                link: "/",
             },
         ],
     };
     return (
-        <header id="nav" className=" z-30 rounded-xl -top-8  w-full h-[140px] justify-center items-center  shadow-red-500">
-            <nav className="mx-auto flex max-w-7xl flex-row items-center justify-between top-0 space-x-4">
+        <header id="nav" className=" z-30 rounded-xl -top-8  w-full h-[140px] justify-center items-center   shadow-red-500">
+            <nav className="mx-auto border border-gray-800 rounded-2xl flex max-w-7xl flex-row items-center justify-between top-0 space-x-4 px-[40px] py-[12px]">
                 {/* Logo */}
                 <Image
                     src='/images/img_image1.png'
@@ -66,19 +66,10 @@ function Navbar({ session }: Props) {
                 <div>
                     {/* Buttons */}
                     <div className="hidden flex-row space-x-1 md:space-x-4 lg:flex ml-4 p-4">
-                        {session ? (
-                            <>
-                                <button className="rounded-lg border-2 bg-yellow-400 border-dark-blue text-xl font-bold px-8 py-4 transition hover:text-dark-blue hover:bg-blue-200 " onClick={() => { alert('hello launcher') }}>
-                                    Launch
-                                </button>
-                            </>
-                        ) : (
-                            <>
-                                <div className="w-32 h-9 px-5 py-2 bg-[#64ae9d] rounded-full shadow-inner border border-white border-opacity-25 justify-center items-center inline-flex">
-                                    <div className="text-center text-black  font-semibold lowercase">Launch App</div>
-                                </div>
-                            </>
-                        )}
+
+                        <button className="w-32 h-9 px-5 py-2 bg-[#64ae9d] rounded-full shadow-inner border border-white border-opacity-25 justify-center items-center inline-flex text-center text-black  font-semibold lowercase" onClick={()=>router.push('/login')}>
+                            Launch App
+                        </button>
 
                     </div>
 
