@@ -2,6 +2,7 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 type Props = {
   menu: Boolean;
@@ -13,7 +14,7 @@ export default function Menu({ menu, session }: Props) {
   const menus = [
     {
       title: "Home",
-      link:"/"
+      link: "/"
     },
     {
       title: "Why Us?",
@@ -30,11 +31,19 @@ export default function Menu({ menu, session }: Props) {
   ];
 
   const router = useRouter();
+  const supabase = useSupabaseClient();
+  const signout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (!error) {
+      console.log("Logout Successful");
+    }
+    location.reload();
+  }
   return (
     <AnimatePresence>
       {menu && (
         <motion.div
-          
+
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
@@ -54,11 +63,18 @@ export default function Menu({ menu, session }: Props) {
             {session ? (
               <>
                 <li
-                  className="active:text-blue-600 font-semibold text-xl text-gray-600 font-bold py-4 transition hover:text-blue-500 "
-                  onClick={()=>{alert("Coming Soon")}}
+                  className="active:text-blue-600 font-semibold text-lg text-gray-600 font-bold py-4 transition hover:text-blue-500 "
+                  onClick={() => { router.push('/movies') }}
                 >
-                  Launch
+                  Movies
                 </li>
+                <li
+                  className="active:text-blue-600 font-semibold text-lg text-gray-600 font-bold py-4 transition hover:text-blue-500 "
+                  onClick={signout}
+                >
+                  SignOut
+                </li>
+
               </>
             ) : (
               <>

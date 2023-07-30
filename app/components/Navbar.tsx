@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Menu from './Menu'
+import { useSupabaseClient } from '@supabase/auth-helpers-react'
 
 type Props = {
     session: Boolean
@@ -11,6 +12,7 @@ type Props = {
 
 function Navbar({ session }: Props) {
     const router = useRouter();
+    const supabase = useSupabaseClient();
     const [menu, setMenu] = useState(false);
 
     const header_content = {
@@ -36,6 +38,14 @@ function Navbar({ session }: Props) {
                 link: "/",
             },
         ],
+    };
+
+    const signout = async () => {
+        const { error } = await supabase.auth.signOut();
+        if (!error) {
+            console.log("Logout Successful");
+        }
+        location.reload();
     };
     return (
         <header id="nav" className=" z-30 rounded-xl -top-8  w-full h-[140px] justify-center items-center   shadow-red-500">
@@ -67,9 +77,20 @@ function Navbar({ session }: Props) {
                     {/* Buttons */}
                     <div className="hidden flex-row space-x-1 md:space-x-4 lg:flex ml-4 p-4">
 
-                        <button className="w-32 h-9 px-5 py-2 bg-[#64ae9d] rounded-full shadow-inner border border-white border-opacity-25 justify-center items-center inline-flex text-center text-black  font-semibold lowercase" onClick={()=>router.push('/login')}>
-                            Launch App
-                        </button>
+                        {session ? (
+                            <>
+                                <button className="w-32 h-9 px-5 py-2 bg-[#64ae9d] rounded-full shadow-inner border border-white border-opacity-25 justify-center items-center inline-flex text-center text-black  font-semibold lowercase" onClick={() => router.push('/movies')}>
+                                    Movies
+                                </button>
+                                <button className="w-32 h-9 px-5 py-2 bg-red-500 rounded-full shadow-inner border border-white border-opacity-25 justify-center items-center inline-flex text-center text-black  font-semibold lowercase" onClick={signout}>
+                                    SignOut
+                                </button>
+                            </>
+                        ) : (
+                            <button className="w-32 h-9 px-5 py-2 bg-[#64ae9d] rounded-full shadow-inner border border-white border-opacity-25 justify-center items-center inline-flex text-center text-black  font-semibold lowercase" onClick={() => router.push('/login')}>
+                                Launch App
+                            </button>
+                        )}
 
                     </div>
 
