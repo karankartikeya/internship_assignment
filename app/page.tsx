@@ -17,7 +17,7 @@ export default function Home() {
       <div className='mx-auto flex w-full md:w-1/2 flex-col mt-20 space-y-16 px-8 py-8 lg:space-y-24'>
         <Update />
       </div>
-      <Footer/>
+      <Footer />
     </main>
   )
 }

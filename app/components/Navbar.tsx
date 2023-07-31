@@ -17,8 +17,8 @@ function Navbar({ session }: Props) {
 
     const header_content = {
         logo: {
-            title: "7svar",
-            path: "/logo2.png",
+            title: "JetPack",
+            path: "/",
         },
         menu: [
             {
