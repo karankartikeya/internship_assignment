@@ -7,7 +7,7 @@ type Props = {}
 
 function Hero({ }: Props) {
     return (
-        <div className="items-center h-screen">
+        <div className="items-center pb-10 border-b w-full ">
             <Img
                 className="absolute h-[492px] w-[82rem] inset-x-[0] mx-auto -z-10 top-[0] mt-[10px] md:mt-24"
                 src="images/img_gradient.png"
@@ -30,8 +30,8 @@ function Hero({ }: Props) {
                 </div>
             </div>
 
-            <div className="overflow-x-auto w-full md:mt-24 mt-10 ">
-            <div className="flex flex-row sm:gap-5 gap-6 items-start justify-start overflow-auto w-auto md:w-full">
+            <div className="overflow-x-auto w-full md:mt-24 mt-10">
+            <div className="flex flex-row sm:gap-5 gap-6 items-start justify-center overflow-auto w-auto md:w-full">
               <Img
                 className="h-12 md:h-auto object-cover w-[104px]"
                 src="images/img_image16.png"
