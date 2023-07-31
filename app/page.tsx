@@ -4,6 +4,8 @@ import Hero from './components/Hero'
 import { useUser } from '@/utils/useUser';
 import Features from './components/Features';
 import Update from './components/Update';
+import Footer from './components/footer';
+
 
 export default function Home() {
   const { userDetails, isLoading } = useUser();
@@ -15,6 +17,7 @@ export default function Home() {
       <div className='mx-auto flex w-full md:w-1/2 flex-col mt-20 space-y-16 px-8 py-8 lg:space-y-24'>
         <Update />
       </div>
+      <Footer/>
     </main>
   )
 }
