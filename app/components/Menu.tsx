@@ -13,19 +13,19 @@ export default function Menu({ menu, session }: Props) {
 
   const menus = [
     {
-      title: "Home",
-      link: "/"
+      title: "products",
+      link: "/",
     },
     {
-      title: "Why Us?",
-      link: "/"
+      title: "dao",
+      link: "/",
     },
     {
-      title: "How it Works?",
-      link: "/"
+      title: "build",
+      link: "/",
     },
     {
-      title: "Courses",
+      title: "docs",
       link: "/",
     },
   ];

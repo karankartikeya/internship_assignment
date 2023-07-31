@@ -48,8 +48,8 @@ function Navbar({ session }: Props) {
         location.reload();
     };
     return (
-        <header id="nav" className=" z-30 rounded-xl -top-8  w-full h-[140px] justify-center items-center   shadow-red-500">
-            <nav className="mx-auto border border-gray-800 rounded-2xl flex max-w-7xl flex-row items-center justify-between top-0 space-x-4 px-[40px] py-[12px]">
+        <header id="nav" className=" z-30 rounded-xl -top-8  w-full h-[140px] justify-center items-center shadow-red-500">
+            <nav className="mx-auto border border-gray-800 rounded-2xl flex max-w-7xl flex-row items-center justify-between top-0 space-x-4 px-4 py-1 md:px-10 md:py-3">
                 {/* Logo */}
                 <Image
                     src='/images/img_image1.png'

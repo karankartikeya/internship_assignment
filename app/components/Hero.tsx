@@ -13,24 +13,24 @@ function Hero({ }: Props) {
                 src="images/img_gradient.png"
                 alt="gradient"
             />
-            <div className='mt-[10px] md:mt-48 items-center justify-center text-center space-y-5  flex-col'>
-                <h1 className='text-emerald-500 text-[30px] font-medium text-center'>Jet Protocol</h1>
-                <h1 className='text-white text-4xl md:text-8xl font-medium leading-10 '>the next generation of</h1>
-                <h1 className='text-white text-4xl md:text-8xl font-medium  leading-10 italic'>defi governance</h1>
+            <div className='mt-14 md:mt-48 items-center justify-center text-center space-y-1 md:space-y-5  flex-col'>
+                <h1 className='text-emerald-500 text-sm md:text-lg font-medium text-center'>Jet Protocol</h1>
+                <h1 className='text-white text-4xl md:text-8xl tracking-tight font-medium leading-10 '>the next generation of</h1>
+                <h1 className='text-white text-4xl md:text-8xl font-playfairdisplay italic tracking-tight leading-10'>defi governance</h1>
             </div>
             <div className="w-full text-center text-white text-opacity-60  text-xl md:text-2xl font-light mt-10">
                 experience open source, transparent and efficient borrowing  <br /> and lending on solana.
             </div>
             <div className='flex justify-center space-x-10 mt-10'>
                 <div className="w-32 h-9 p-[20px] bg-[#64ae9d] rounded-full shadow-inner border border-white border-opacity-25 justify-center items-center inline-flex">
-                    <div className="text-center text-sm text-black  font-bold lowercase">read docs</div>
+                    <div className="text-center text-sm text-black font-bold lowercase">read docs</div>
                 </div>
                 <div className="w-32 h-9 p-[20px] bg-black rounded-full shadow-inner border border-white border-opacity-25 justify-center items-center inline-flex">
                     <div className="text-center text-sm text-white  font-semibold lowercase">how it works</div>
                 </div>
             </div>
 
-            <div className="overflow-x-auto w-full md:mt-24 mt-10  ">
+            <div className="overflow-x-auto w-full md:mt-24 mt-10 ">
             <div className="flex flex-row sm:gap-5 gap-6 items-start justify-start overflow-auto w-auto md:w-full">
               <Img
                 className="h-12 md:h-auto object-cover w-[104px]"
