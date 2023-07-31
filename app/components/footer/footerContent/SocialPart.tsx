@@ -9,7 +9,7 @@ import Image from "next/image";
 const SocialPart = () => {
 
   return (
-    <div className="mt-8 rtl:md:mt-0 ltr:xl:mt-0 rtl:lg:mr-12 ltr:xl:ml-12  ltr:2xl:ml-48">
+    <div className="rtl:md:mt-0 ltr:xl:mt-0 rtl:lg:mr-12 ltr:xl:ml-12  ltr:2xl:ml-48">
       <div>
         <Image
           src='/images/img_image1.png'

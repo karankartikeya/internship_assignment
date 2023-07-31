@@ -4,9 +4,9 @@ import SocialPart from "./footerContent/SocialPart";
 
 const Footer = () => {
   return (
-    <footer className="mt-12 w-full p-14">
+    <footer className="mt-12 w-full ">
       <div className="border-t-[1px] border-slate-500/30 ">
-        <div className="flex flex-col md:flex-row py-4 md:py-8 md:px-4 w-fit xl:max-w-[2100px] mx-auto md:space-x-24  ">
+        <div className="flex flex-col md:flex-row py-4 md:py-8 md:px-4 w-fit xl:max-w-[2100px] mx-auto md:space-x-24 gap-10 ">
           <SocialPart />
           <FooterColumns />
         </div>

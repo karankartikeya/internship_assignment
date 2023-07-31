@@ -9,6 +9,7 @@ import { useUser } from '@/utils/useUser';
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
 import { useRouter } from 'next/navigation'
 import Navbar from '../components/Navbar';
+import { NextSeo } from 'next-seo';
 
 type Props = {};
 
@@ -53,6 +54,10 @@ function Page({ }: Props) {
 
     return (
         <div className='flex min-h-screen flex-col items-center p-10'>
+            <NextSeo
+                title="Simple Usage Example"
+                description="A short description goes here."
+            />
             <Navbar session={userDetails != null} />
             <div className="movie_app">
                 <div className='flex justify-between space-x-10'>
