@@ -13,7 +13,7 @@ function Update({ }: Props) {
             >
                 Join Us
             </h2>
-            <p className="max-w-[741px] md:max-w-full text-5xl sm:text-[38px] md:text-[44px] text-center font-semibold leading-10 text-white">
+            <p className="max-w-[741px] md:max-w-full text-3xl sm:text-[38px] md:text-[44px] text-center font-semibold leading-10 text-white">
                 become a part of community driven <br />
                 <span className="text-white-A700 font-playfairdisplay font-semibold italic">
                     defi governance
